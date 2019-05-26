@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <title>Casa do Código</title>
+    </head>
+    <body>
+     
+     <div class="container"> 
+       <div class="jumbotron text-center">
+            <h1 class="display-4">Casa do Código</h1>
+            <hr>
+            <p class="lead">Sistema feito em NodeJs para controle de livros.</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1> Listagem de livros </h1>
+            <a class="btn btn-primary" href="/livros/form" role="button">Cadastrar Livro</a>
+        </div>
+        <br>
+            <table id="livros" class="table">
+                <tr>
+                    <td>ID</td>
+                    <td>Título</td>
+                    <td>Preço</td>
+                    <td class="text-center">Editar</td>
+                    <td class="text-center">Remover</td>
+                </tr>
+                <tr id="livro_${livro.id}" for (livro in data.livros)> 
+                    <td>${livro.id}</td>
+                    <td>${livro.titulo}</td>
+                    <td>${livro.preco}</td>
+                    <td class="text-center"><a href="/livros/form/${livro.id}"><i class="fas fa-edit"></i></a></td> 
+                    <td class="text-center"><a href="#" data-ref="${livro.id}" data-type="remocao" class="text-danger">Remover <i class="fas fa-trash"></i></a></td> 
+                </tr>
+            </table> 
+        </div>
+
+        <script src="/estatico/js/remove-livro.js">
+        </script> 
+    </body> 
+</html>

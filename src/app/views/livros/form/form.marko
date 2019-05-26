@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <title>Casa do Código</title>
+    </head>
+    <body>
+        <div class="container"> 
+        <div class="jumbotron d-flex justify-content-between align-items-center">
+            <h2>Formulário de Livros</h2> 
+            <a class="btn btn-primary" href="/livros" role="button"><i class="fas fa-arrow-left"></i> Voltar</a>   
+        </div>
+        <form action="/livros" method="post" class="form-group">
+
+           <div if(data.livro.id)>
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" id="id" name="id" value="${data.livro.id}" class="form-control"/>
+            </div>
+
+            <div>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Casa do Código..." value="${data.livro.titulo}" class="form-control"/>
+                <br>
+            </div>
+            <div>
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" placeholder="150.25" value="${data.livro.preco}" class="form-control"/>
+                <br>
+            </div>
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea cols="20" rows="10"  id="descricao" name="descricao" placeholder="Fale mais sobre o livro..." class="form-control">${data.livro.descricao}</textarea>
+                <br>
+            </div>
+
+            <input type="submit" value="Salvar" class="btn btn-success"/>
+        </form>
+        </div>
+    </body>
+</html>
